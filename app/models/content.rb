@@ -3,4 +3,5 @@ class Content < ActiveRecord::Base
   belongs_to :post
   belongs_to :presenter
   belongs_to :friendship
+  has_many :meta
 end
