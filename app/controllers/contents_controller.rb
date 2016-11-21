@@ -29,6 +29,7 @@ class ContentsController < ApplicationController
   # POST /contents.json
   def create
     @content = Content.new(content_params)
+    @content.user = current_user
 
     respond_to do |format|
       if @content.save
