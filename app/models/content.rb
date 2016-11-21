@@ -6,4 +6,5 @@ class Content < ActiveRecord::Base
   has_many :meta
   has_many :presenters
   has_many :posts
+  has_many :ui_elements
 end
