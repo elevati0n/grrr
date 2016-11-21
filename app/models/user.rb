@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   has_many :contents
   has_many :meta
   belongs_to :approval
+  belongs_to :network
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
