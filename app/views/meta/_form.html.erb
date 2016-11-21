@@ -1,18 +1,16 @@
-<%= simple_form_for(@metum) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :content %>
-    <%= f.input :data %>
-    <%= f.association :user %>
-    <%= f.association :approval %>
-    <%= f.association :post %>
-    <%= f.association :feed %>
-    <%= f.association :presenter %>
-    <%= f.association :friendship %>
+<%= form_for @meta, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :data, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :data, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  meta_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
