@@ -6,4 +6,5 @@ class Feed < ActiveRecord::Base
   has_many :networks
   has_many :subscriptions
   has_many :meta
+  acts_as_votable 
 end
