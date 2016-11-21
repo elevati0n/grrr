@@ -5,4 +5,5 @@ class Feed < ActiveRecord::Base
   has_many :posts
   has_many :networks
   has_many :subscriptions
+  has_many :meta
 end
