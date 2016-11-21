@@ -29,6 +29,7 @@ class NetworksController < ApplicationController
   # POST /networks.json
   def create
     @network = Network.new(network_params)
+    @network.user = current_user
 
     respond_to do |format|
       if @network.save
