@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   has_many :presenters
   has_many :friendships
   has_many :subscriptions
+  has_many :roles
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
