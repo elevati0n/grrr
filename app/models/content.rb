@@ -7,4 +7,5 @@ class Content < ActiveRecord::Base
   has_many :presenters
   has_many :posts
   has_many :ui_elements
+  acts_as_votable 
 end
