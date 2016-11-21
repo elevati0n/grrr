@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :feeds
   belongs_to :friendship
   belongs_to :role
+  belongs_to :presenter
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
