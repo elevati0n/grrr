@@ -1,0 +1,31 @@
+<h1>Listing ui_elements</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Meta</th>
+      <th>User</th>
+      <th>Presenter</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ui_elements.each do |ui_element| %>
+      <tr>
+        <td><%= ui_element.meta %></td>
+        <td><%= ui_element.user %></td>
+        <td><%= ui_element.presenter %></td>
+        <td><%= ui_element.content %></td>
+        <td><%= link_to 'Show', ui_element %></td>
+        <td><%= link_to 'Edit', edit_ui_element_path(ui_element) %></td>
+        <td><%= link_to 'Destroy', ui_element, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ui element', new_ui_element_path %>

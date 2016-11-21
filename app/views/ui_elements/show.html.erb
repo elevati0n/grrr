@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Meta:</strong>
+  <%= @ui_element.meta %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @ui_element.user %>
+</p>
+
+<p>
+  <strong>Presenter:</strong>
+  <%= @ui_element.presenter %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @ui_element.content %>
+</p>
+
+<%= link_to 'Edit', edit_ui_element_path(@ui_element) %> |
+<%= link_to 'Back', ui_elements_path %>

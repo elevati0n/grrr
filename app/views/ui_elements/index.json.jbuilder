@@ -1,0 +1,1 @@
+json.array! @ui_elements, partial: 'ui_elements/ui_element', as: :ui_element
