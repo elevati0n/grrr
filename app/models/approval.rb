@@ -4,4 +4,5 @@ class Approval < ActiveRecord::Base
   belongs_to :subscription
   belongs_to :membership
   has_one :user
+  has_one :meta
 end
