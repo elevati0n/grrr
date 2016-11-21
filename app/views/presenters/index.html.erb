@@ -1,25 +1,34 @@
-<h1>Listing presenters</h1>
-
-<table>
+<%- model_class = Presenter -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Presenter %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @presenters.each do |presenter| %>
       <tr>
-        <td><%= presenter.user %></td>
-        <td><%= link_to 'Show', presenter %></td>
-        <td><%= link_to 'Edit', edit_presenter_path(presenter) %></td>
-        <td><%= link_to 'Destroy', presenter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= presenter.id %></td>
+        <td><%=l presenter.created_at, format: :long %></td>
+        <td>
+          <%= link_to presenter_path(presenter), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to presenter_path(presenter), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Presenter', new_presenter_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_presenter_path,
+            :class => 'btn btn-primary' %>
