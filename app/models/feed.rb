@@ -4,4 +4,5 @@ class Feed < ActiveRecord::Base
   belongs_to :subscription
   has_many :posts
   has_many :networks
+  has_many :subscriptions
 end
