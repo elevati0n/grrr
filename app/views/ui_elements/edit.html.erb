@@ -1,6 +1,5 @@
-<h1>Editing ui_element</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @ui_element %> |
-<%= link_to 'Back', ui_elements_path %>
+<%- model_class = UIElement -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => UIElement %></h1>
+</div>
+<%= render :partial => 'form' %>
