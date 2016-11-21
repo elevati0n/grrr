@@ -1,5 +1,5 @@
 class PresentersController < ApplicationController
-  before_action :set_presenter, only: [:show, :edit, :update, :destroy]
+  before_action :set_presenter, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /presenters
   # GET /presenters.json
