@@ -1,5 +1,5 @@
 class UiElementsController < ApplicationController
-  before_action :set_ui_element, only: [:show, :edit, :update, :destroy]
+  before_action :set_ui_element, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /ui_elements
   # GET /ui_elements.json
