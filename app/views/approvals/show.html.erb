@@ -1,29 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Approval -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Approval %></h1>
+</div>
 
-<p>
-  <strong>Approve:</strong>
-  <%= @approval.approve %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:approve) %></dt>
+      <dd><pre class="prettyprint"><%= @approval.approve %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @approval.user %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              approvals_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_approval_path(@approval), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              approval_path(@approval),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Friendship:</strong>
-  <%= @approval.friendship %>
-</p>
-
-<p>
-  <strong>Subscription:</strong>
-  <%= @approval.subscription %>
-</p>
-
-<p>
-  <strong>Membership:</strong>
-  <%= @approval.membership %>
-</p>
-
-<%= link_to 'Edit', edit_approval_path(@approval) %> |
-<%= link_to 'Back', approvals_path %>
