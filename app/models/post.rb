@@ -7,4 +7,5 @@ class Post < ActiveRecord::Base
   has_many :networks
   has_many :feeds
   has_many :meta
+  acts_as_votable 
 end
