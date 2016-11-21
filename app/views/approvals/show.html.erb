@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Approve:</strong>
+  <%= @approval.approve %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @approval.user %>
+</p>
+
+<p>
+  <strong>Friendship:</strong>
+  <%= @approval.friendship %>
+</p>
+
+<p>
+  <strong>Subscription:</strong>
+  <%= @approval.subscription %>
+</p>
+
+<p>
+  <strong>Membership:</strong>
+  <%= @approval.membership %>
+</p>
+
+<%= link_to 'Edit', edit_approval_path(@approval) %> |
+<%= link_to 'Back', approvals_path %>

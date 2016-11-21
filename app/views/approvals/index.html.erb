@@ -1,0 +1,33 @@
+<h1>Listing approvals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Approve</th>
+      <th>User</th>
+      <th>Friendship</th>
+      <th>Subscription</th>
+      <th>Membership</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @approvals.each do |approval| %>
+      <tr>
+        <td><%= approval.approve %></td>
+        <td><%= approval.user %></td>
+        <td><%= approval.friendship %></td>
+        <td><%= approval.subscription %></td>
+        <td><%= approval.membership %></td>
+        <td><%= link_to 'Show', approval %></td>
+        <td><%= link_to 'Edit', edit_approval_path(approval) %></td>
+        <td><%= link_to 'Destroy', approval, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Approval', new_approval_path %>
