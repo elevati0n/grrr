@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  approve: false
+  user_id: 
+  friendship_id: 
+  subscription_id: 
+  membership_id: 
+
+two:
+  approve: false
+  user_id: 
+  friendship_id: 
+  subscription_id: 
+  membership_id: 
