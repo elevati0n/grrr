@@ -29,6 +29,7 @@ class MetaController < ApplicationController
   # POST /meta.json
   def create
     @metum = Metum.new(metum_params)
+    @meta.user = current_user
 
     respond_to do |format|
       if @metum.save
