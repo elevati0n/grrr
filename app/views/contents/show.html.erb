@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @content.user %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @content.body %>
+</p>
+
+<p>
+  <strong>Post:</strong>
+  <%= @content.post %>
+</p>
+
+<p>
+  <strong>Presenter:</strong>
+  <%= @content.presenter %>
+</p>
+
+<p>
+  <strong>Friendship:</strong>
+  <%= @content.friendship %>
+</p>
+
+<%= link_to 'Edit', edit_content_path(@content) %> |
+<%= link_to 'Back', contents_path %>
