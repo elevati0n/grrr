@@ -1,0 +1,18 @@
+<%= simple_form_for(@metum) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :content %>
+    <%= f.input :data %>
+    <%= f.association :user %>
+    <%= f.association :approval %>
+    <%= f.association :post %>
+    <%= f.association :feed %>
+    <%= f.association :presenter %>
+    <%= f.association :friendship %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
