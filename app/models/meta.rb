@@ -6,4 +6,5 @@ class Meta < ActiveRecord::Base
   belongs_to :feed
   belongs_to :presenter
   belongs_to :friendship
+  acts_as_votable 
 end
