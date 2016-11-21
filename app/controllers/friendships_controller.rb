@@ -29,6 +29,7 @@ class FriendshipsController < ApplicationController
   # POST /friendships.json
   def create
     @friendship = Friendship.new(friendship_params)
+    @friendship.user = current_user
 
     respond_to do |format|
       if @friendship.save
