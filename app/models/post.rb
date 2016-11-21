@@ -5,4 +5,5 @@ class Post < ActiveRecord::Base
   has_many :contents
   has_many :presenters
   has_many :networks
+  has_many :feeds
 end
