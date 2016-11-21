@@ -4,4 +4,5 @@ class Post < ActiveRecord::Base
   belongs_to :network
   has_many :contents
   has_many :presenters
+  has_many :networks
 end
