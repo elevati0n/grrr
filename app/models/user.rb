@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :networks
   has_many :posts
   has_many :feeds
+  belongs_to :friendship
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
