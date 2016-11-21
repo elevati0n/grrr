@@ -1,25 +1,34 @@
-<h1>Listing friendships</h1>
-
-<table>
+<%- model_class = Friendship -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Friendship %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @friendships.each do |friendship| %>
       <tr>
-        <td><%= friendship.user %></td>
-        <td><%= link_to 'Show', friendship %></td>
-        <td><%= link_to 'Edit', edit_friendship_path(friendship) %></td>
-        <td><%= link_to 'Destroy', friendship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= friendship.id %></td>
+        <td><%=l friendship.created_at, format: :long %></td>
+        <td>
+          <%= link_to friendship_path(friendship), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to friendship_path(friendship), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Friendship', new_friendship_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_friendship_path,
+            :class => 'btn btn-primary' %>
