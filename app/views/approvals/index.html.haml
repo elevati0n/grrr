@@ -1,0 +1,25 @@
+- model_class = Approval
+.page-header
+  %h1= t '.title', :default => Approval
+%table.table.table-striped
+  %thead
+    %tr
+      %th ID
+      %th= model_class.human_attribute_name(:approve)
+      %th= model_class.human_attribute_name(:created_at)
+      %th= t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @approvals.each do |approval|
+      %tr
+        %td= approval.id
+        %td= approval.approve
+        %td= l approval.created_at, format: :long
+        %td
+          = link_to approval_path(approval), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do
+            = glyph 'info-sign'
+            = glyph 'pencil'
+          = link_to approval_path(approval), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do
+            = glyph 'remove'
+= link_to t('.new', :default => t("helpers.links.new")), |
+  new_approval_path,                                     |
+  :class => 'btn btn-primary'                            |

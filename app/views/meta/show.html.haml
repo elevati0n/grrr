@@ -1,0 +1,18 @@
+- model_class = Meta
+.page-header
+  %h1= t '.title', :default => Meta
+.fieldset
+  %dl
+    %dt.label.label-default= model_class.human_attribute_name(:data)
+    %dd
+      %pre.prettyprint= @meta.data
+.form-group
+  = link_to t('.back', :default => t("helpers.links.back")), |
+    meta_path, :class => 'btn btn-default'                   |
+  = link_to t('.edit', :default => t("helpers.links.edit")), |
+    edit_meta_path(@meta), :class => 'btn btn-default'       |
+  = link_to t('.destroy', :default => t("helpers.links.destroy")),                                               |
+    meta_path(@meta),                                                                                            |
+    :method => 'delete',                                                                                         |
+    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, |
+    :class => 'btn btn-danger'                                                                                   |

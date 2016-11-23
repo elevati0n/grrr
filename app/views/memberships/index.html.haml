@@ -1,0 +1,23 @@
+- model_class = Membership
+.page-header
+  %h1= t '.title', :default => Membership
+%table.table.table-striped
+  %thead
+    %tr
+      %th ID
+      %th= model_class.human_attribute_name(:created_at)
+      %th= t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @memberships.each do |membership|
+      %tr
+        %td= membership.id
+        %td= l membership.created_at, format: :long
+        %td
+          = link_to membership_path(membership), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do
+            = glyph 'info-sign'
+            = glyph 'pencil'
+          = link_to membership_path(membership), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do
+            = glyph 'remove'
+= link_to t('.new', :default => t("helpers.links.new")), |
+  new_membership_path,                                   |
+  :class => 'btn btn-primary'                            |

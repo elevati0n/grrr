@@ -1,0 +1,21 @@
+- model_class = Role
+.page-header
+  %h1= t '.title', :default => Role
+.fieldset
+  %dl
+    %dt.label.label-default= model_class.human_attribute_name(:powers)
+    %dd
+      %pre.prettyprint= @role.powers
+    %dt.label.label-default= model_class.human_attribute_name(:meta)
+    %dd
+      %pre.prettyprint= @role.meta
+.form-group
+  = link_to t('.back', :default => t("helpers.links.back")), |
+    roles_path, :class => 'btn btn-default'                  |
+  = link_to t('.edit', :default => t("helpers.links.edit")), |
+    edit_role_path(@role), :class => 'btn btn-default'       |
+  = link_to t('.destroy', :default => t("helpers.links.destroy")),                                               |
+    role_path(@role),                                                                                            |
+    :method => 'delete',                                                                                         |
+    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, |
+    :class => 'btn btn-danger'                                                                                   |

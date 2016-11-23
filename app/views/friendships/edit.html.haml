@@ -1,0 +1,4 @@
+- model_class = Friendship
+.page-header
+  %h1= t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Friendship
+= render :partial => 'form'
