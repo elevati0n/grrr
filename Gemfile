@@ -69,4 +69,8 @@ gem 'materialize-sass'
 
 gem 'bh', '~> 1.2'
 
-ge
+gem "hyper-rails"
+gem 'opal-rails'
+gem 'opal-browser'
+gem 'hyper-react'
+gem 'therubyracer', platforms: :ruby
