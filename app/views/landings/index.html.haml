@@ -1,2 +1,71 @@
-%h1 Landings#index
-%p Find me in app/views/landings/index.html.erb
+.container-fluid
+  %hr
+
+.container
+  .row
+    .jumbotron
+      %h2 grrr
+      %p the Landing page
+      %hr
+
+.container-fluid
+  %hr
+  .row
+    .well
+      %hr
+      = icon 'glyphicon glyphicon-map-marker'
+      = panel "welcome to grrr"
+      %hr
+  %hr
+  = panel_row column_class: 'col-md-3' do
+    %hr
+    = panel 'menu' do
+      = button 'Menu', '#'
+    = panel do
+      = button 'Menu1'
+    = panel do
+      = button 'Menu3'
+    = panel do
+      = dropdown 'Menu4' do
+        = link_to 'home', '#'
+        = link_to 'home', '#'
+        = link_to 'home', '#'
+    %hr
+  %hr
+.jumbotron
+  .row
+    .col-xs-12
+      .row
+        %hr
+        .col-md-10.col-md-offset-1
+        %hr
+          .col-sm-offset-2.col-md-6
+            .well
+              %hr
+              .card-panel
+
+                %h4 progress bar
+                = icon 'glyphicon glyphicon-flag'
+                = progress_bar [{percentage: 40, context: :success},
+                                {percentage: 30, context: :warning},
+                                {percentage: 15, context: :danger}]
+              %hr
+.container-fluid
+  = panel_row column_class: 'card-panel' do
+    .col-xs-4.pull-left= panel "#1"
+    .col-xs-4= panel "#2"
+    .col-xs-4.pull-right= panel "#3"
+%hr
+
+  = panel do
+    .row
+      .col-md-10.col-md-offset-1
+        %hr
+        = panel do
+          .row
+            .col-sm-offset-4.col-md-4
+              %h3.centered-text hi there
+        %hr
+
+
+

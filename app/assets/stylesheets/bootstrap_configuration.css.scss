@@ -13,3 +13,10 @@ $colors-space: #000033 #333366 #333333 #336699 #663399 #663366 #6699cc #663333 #
                 #ccffff #cccc99 #ffffcc #cc9999;
 
 $colors-grrr: #003333, #3300cc, #006699, #669999, #99cc99, #cccccc, #99cc99;
+
+
+$zindex-navbar: 9999;
+
+.navbar {
+  z-index: 9999;
+}

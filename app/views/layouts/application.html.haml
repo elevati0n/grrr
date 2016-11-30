@@ -10,6 +10,53 @@
     = analytics_init if Rails.env.production? or Rails.env.development?
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
   %body
-    = render partial: "elements/navbar"
+    -#= render 'elements/navbar'
+    = navbar inverted: true, fluid: true do
+      = nav class: 'nav nav-pills navbar-static-top' do
+        = vertical do
+          = link_to 'grrr...', '/'
+        = horizontal  do
+          %nav
+            .nav-justified
+              %li= link_to 'networks', networks_path
+              %li= link_to 'feed', feeds_path
+              %li= link_to 'friends', friendships_path
+    .navbar-right.navbar-fixed-top
+      = navbar inverted: true, fluid: true do
+        %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+          Account
+          %b.caret
+          %ul.dropdown-menu
+            %nav.btn-group-justified
+              - if defined?(Devise)
+                - if user_signed_in?
+                  = link_to 'Memberships', memberships_path
+                  = link_to 'Subscriptions', subscriptions_path
+                  %li.divider
+                  - if defined?(Devise)
+                    - if user_signed_in?
+                      = link_to 'my content', contents_path
+                      %hr
+                      %li= link_to "Edit Account", edit_user_registration_path
+                      %li= link_to "Sign Out", destroy_user_session_path, method: :delete
+                - else
+                  %li= link_to "Sign Up", new_user_registration_path
+                  %li= link_to "Login", new_user_session_path
+
+
+
+
+
+
+
+
+
     = bootstrap_flash
-    = yield
+    .container-fluid
+      .row
+        .col-xs-12.card
+          = yield
+          %hr
+        %hr
+      %hr
+= yield
