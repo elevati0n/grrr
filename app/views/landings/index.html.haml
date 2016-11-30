@@ -4,13 +4,21 @@
 .container
   .row
     .jumbotron
-      = react_component 'Home::Show', say_hello_to: "Sally"
+      = react_component 'Home::Show', say_hello_to: "Claire"
 
 .container
   .row
     .jumbotron
-      %h2 grrr
-      %p the Landing page
+      = react_component 'Home::App'
+
+.container.mdl-shadow--24dp
+  .row.well-lg
+    .card.card-panel.panel-info
+      %p.panel-heading <3 <3
+      %h2.panel-title
+        %h1 Hi Claire
+      %h1.panel-body.panel-danger
+        = icon :heart
       %hr
 
 .container-fluid

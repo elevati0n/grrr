@@ -11,6 +11,9 @@
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
   %body
     -#= render 'elements/navbar'
+
+
+
     = navbar inverted: true, fluid: true do
       = nav class: 'nav nav-pills navbar-static-top' do
         = vertical do
@@ -42,7 +45,7 @@
                 - else
                   %li= link_to "Sign Up", new_user_registration_path
                   %li= link_to "Login", new_user_session_path
-
+    = react_component 'Home::App'
 
 
 
