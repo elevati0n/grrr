@@ -1,6 +1,6 @@
 module Components
   module Home
-    class App < React::Component::Base
+    class App 
 
       # param :my_param
       # param param_with_default: "default value"
