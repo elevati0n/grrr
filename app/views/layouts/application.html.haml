@@ -10,10 +10,6 @@
     = analytics_init if Rails.env.production? or Rails.env.development?
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
   %body
-    -#= render 'elements/navbar'
-
-
-
     = navbar inverted: true, fluid: true do
       = nav class: 'nav nav-pills navbar-static-top' do
         = vertical do
@@ -45,14 +41,29 @@
                 - else
                   %li= link_to "Sign Up", new_user_registration_path
                   %li= link_to "Login", new_user_session_path
+    .container
+      .well-lg.row
+        .parallax-container
+          .parallax
+            = image_tag image_url 'https://i.ytimg.com/vi/7oYOVsUaLOs/maxresdefault.jpg'
+      .stage
+        .layer
+        .layer
+        .layer
+        .layer
+        .layer
+        .layer
+    .container-fluid
+      .row.panel-primary
+        = bootstrap_flash
+        .col-xs-12.panel-primary= yield
+    .container-fluid
+      .row.panel-primary
+        = bootstrap_flash
+        .col-xs-12.panel-primary= yield
+    .parallax-container
+      .parallax
+        = image_tag 'spaceface.jpeg'
 
-
-    = yield
-    = bootstrap_flash
-    .container-fluid.card
-      .row
-      %hr
-    %hr
-    = yield
-
-  %hr
+    .navbar-static-bottom
+      .col-xs-6.card.mdl-shadow--24dp= image_tag 'seanadams.jpg'
