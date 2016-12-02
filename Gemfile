@@ -72,5 +72,6 @@ gem 'bh', '~> 1.2'
 gem "hyper-rails"
 gem 'opal-rails'
 gem 'opal-browser'
-gem 'hyper-react'
 gem 'therubyracer', platforms: :ruby
+
+gem 'react_webpack_rails'
