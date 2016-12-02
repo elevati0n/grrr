@@ -43,3 +43,33 @@ $button-padding: .25em;
 //.form-user {
 //  max-width: 450px;
 //}
+.parallax-container {
+  width: 110%;
+  overflow: visible;
+  min-height: 500px;
+  line-height: 0;
+  position: absolute;
+  margin-top: 0;
+  margin-left: 0;
+  color: rgba(255,255,255,.9);
+}
+.parallax-container .section {
+  width: 110%;
+}
+
+.citylights {
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff2d95, 0 0 30px #ff2d95, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
+  letter-spacing: 5px;
+  font: 80px 'MisoRegular';
+}
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 0%;
+  }
+}

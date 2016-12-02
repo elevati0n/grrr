@@ -1,9 +1,14 @@
-.container-fluid
-  %hr
+.parallax-container.top
+  .parallax
+    = image_tag image_url 'https://i.ytimg.com/vi/7oYOVsUaLOs/maxresdefault.jpg'
 
-.container.mdl-shadow--24dp
-  .row.well-lg
-    .card.card-panel.panel-info
+
+
+.container.well-lg.text-center
+  .row
+    .container-fluid
+      %h1.citylights  grrr.. rawr xD
+    .card.card-panel.panel-info.mdl-shadow--12dp
       %p.panel-heading <3 <3
       %h2.panel-title
         %h1 grrr
@@ -55,9 +60,9 @@
               %hr
 .container-fluid
   = panel_row column_class: 'card-panel' do
-    .col-xs-4.pull-left= panel "#1"
-    .col-xs-4= panel "#2"
-    .col-xs-4.pull-right= panel "#3"
+    .col-md-4.pull-left= panel "#1"
+    .col-md-4.pull-left= panel "#2"
+    .col-md-4.pull-right= panel "#3"
 %hr
 
   = panel do
@@ -68,7 +73,4 @@
           .row
             .col-sm-offset-4.col-md-4
               %h3.centered-text hi there and welcome to grrr
-        %hr
-
-
 
